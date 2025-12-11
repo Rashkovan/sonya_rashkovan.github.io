@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talks - Your Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: #EBEBD3;
+            color: #021427;
+        }
+
+        nav {
+            background: #EBEBD3;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #7A94A5;
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #083D77;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #021427;
+            text-decoration: none;
+            font-weight: 500;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            border-bottom-color: #5786B2;
+        }
+
+        .talks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin: 0;
+        }
+
+        .talk-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .talk-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .talk-item:hover .talk-image {
+            transform: scale(1.05);
+        }
+
+        .talk-overlay {
+            position: absolute;
+            inset: 0;
+            background: #083D77; /* Solid Regal Navy */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .talk-item:hover .talk-overlay {
+            opacity: 1;
+        }
+
+        .talk-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #EBEBD3;
+            margin-bottom: 0.5rem;
+        }
+
+        .talk-description {
+            font-size: 0.95rem;
+            color: #7A94A5;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .talk-venue {
+            font-size: 0.85rem;
+            color: #5786B2;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .talk-link {
+            color: #5786B2;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .talk-link:hover {
+            text-decoration: underline;
+        }
+
+        .talk-item.solid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .talk-item.solid h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .bg-prussian { background: #021427; color: #EBEBD3; }
+        .bg-navy { background: #083D77; color: #EBEBD3; }
+        .bg-denim { background: #5786B2; color: #021427; }
+        .bg-steel { background: #7A94A5; color: #EBEBD3; }
+
+        @media (max-width: 1024px) {
+            .talks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .talks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">Your Initials</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="media.html">Media</a></li>
+            <li><a href="talks.html" class="active">Talks</a></li>
+        </ul>
+    </nav>
+
+    <div class="talks-grid">
+        
+        <!-- TALK ITEM 1 -->
+        <div class="talk-item">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" alt="Talk" class="talk-image">
+            <div class="talk-overlay">
+                <h3 class="talk-title">Talk Title</h3>
+                <p class="talk-description">
+                    Brief description of what this talk was about.
+                </p>
+                <p class="talk-venue">Conference Name, Location</p>
+                <a href="#" class="talk-link">Watch Recording →</a>
+            </div>
+        </div>
+
+        <!-- SOLID CARD -->
+        <div class="talk-item solid bg-prussian">
+            <h2>Speaking<br>Engagements</h2>
+        </div>
+
+        <!-- TALK ITEM 2 -->
+        <div class="talk-item">
+            <img src="https://images.unsplash.com/photo-1559523161-0fc0d8b38a7a?w=800" alt="Talk" class="talk-image">
+            <div class="talk-overlay">
+                <h3 class="talk-title">Another Presentation</h3>
+                <p class="talk-description">
+                    Description of this talk.
+                </p>
+                <p class="talk-venue">Event Name, Date</p>
+                <a href="#" class="talk-link">View Slides →</a>
+            </div>
+        </div>
+
+        <!-- Add more talk items by copying the blocks above -->
+        
+    </div>
+</body>
+</html>
+
+<!-- 
+FOR TALKS:
+- Include venue/conference name in <p class="talk-venue">
+- Link to slides, recording, or event page
+- Use photos from the event if available
+-->
