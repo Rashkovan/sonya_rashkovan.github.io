@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Your Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: #EBEBD3;
+            color: #021427;
+        }
+
+        nav {
+            background: #EBEBD3;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #7A94A5;
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #083D77;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #021427;
+            text-decoration: none;
+            font-weight: 500;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            border-bottom-color: #5786B2;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #083D77;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin: 0;
+        }
+
+        .media-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .media-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .media-item:hover .media-image {
+            transform: scale(1.05);
+        }
+
+        .media-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(2, 20, 39, 0.95) 0%,
+                rgba(2, 20, 39, 0.7) 50%,
+                rgba(2, 20, 39, 0) 100%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .media-item:hover .media-overlay {
+            opacity: 1;
+        }
+
+        .media-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #EBEBD3;
+            margin-bottom: 0.5rem;
+        }
+
+        .media-description {
+            font-size: 0.95rem;
+            color: #7A94A5;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .media-publication {
+            font-size: 0.85rem;
+            color: #5786B2;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .media-link {
+            color: #5786B2;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .media-link:hover {
+            text-decoration: underline;
+        }
+
+        .media-item.solid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .media-item.solid h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .bg-prussian { background: #021427; color: #EBEBD3; }
+        .bg-navy { background: #083D77; color: #EBEBD3; }
+        .bg-denim { background: #5786B2; color: #021427; }
+        .bg-steel { background: #7A94A5; color: #EBEBD3; }
+
+        @media (max-width: 1024px) {
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">Your Initials</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="media.html" class="active">Media</a></li>
+            <li><a href="talks.html">Talks</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-title">
+        <h1>Media</h1>
+    </div>
+
+    <div class="media-grid">
+        
+        <!-- MEDIA ITEM 1 (Article/Publication) -->
+        <div class="media-item">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800" alt="Article" class="media-image">
+            <div class="media-overlay">
+                <h3 class="media-title">Article Title</h3>
+                <p class="media-description">
+                    Brief description of the article or publication.
+                </p>
+                <p class="media-publication">Publication Name</p>
+                <a href="#" class="media-link">Read Article →</a>
+            </div>
+        </div>
+
+        <!-- SOLID CARD -->
+        <div class="media-item solid bg-navy">
+            <h2>Writing &<br>Publications</h2>
+        </div>
+
+        <!-- MEDIA ITEM 2 -->
+        <div class="media-item">
+            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800" alt="Article" class="media-image">
+            <div class="media-overlay">
+                <h3 class="media-title">Another Article</h3>
+                <p class="media-description">
+                    Description here.
+                </p>
+                <p class="media-publication">Forbes Ukraine</p>
+                <a href="#" class="media-link">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Add more media items by copying the blocks above -->
+        
+    </div>
+</body>
+</html>
+
+<!-- 
+FOR MEDIA/ARTICLES:
+- Include publication name in <p class="media-publication">
+- Link to the actual article URL
+- Use representative images or publication logos
+-->
