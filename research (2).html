@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Sonya Rashkovan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: #EBEBD3;
+            color: #021427;
+        }
+
+        nav {
+            background: #EBEBD3;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #7A94A5;
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #083D77;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #021427;
+            text-decoration: none;
+            font-weight: 500;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            border-bottom-color: #5786B2;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin: 0;
+        }
+
+        .research-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .research-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .research-item:hover .research-image {
+            transform: scale(1.05);
+        }
+
+        .research-overlay {
+            position: absolute;
+            inset: 0;
+            background: #083D77;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .research-item:hover .research-overlay {
+            opacity: 1;
+        }
+
+        .research-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #EBEBD3;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-description {
+            font-size: 0.95rem;
+            color: #EBEBD3;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .research-description a {
+            color: #5786B2;
+            text-decoration: underline;
+        }
+
+        .research-description a:hover {
+            color: #EBEBD3;
+        }
+
+        .research-link {
+            color: #5786B2;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .research-link:hover {
+            text-decoration: underline;
+        }
+
+        .research-item.solid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .research-item.solid h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .bg-prussian { background: #021427; color: #EBEBD3; }
+        .bg-navy { background: #083D77; color: #EBEBD3; }
+        .bg-denim { background: #5786B2; color: #021427; }
+        .bg-steel { background: #7A94A5; color: #EBEBD3; }
+
+        @media (max-width: 1024px) {
+            .research-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">SR</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html" class="active">Research</a></li>
+            <li><a href="media.html">Media</a></li>
+            <li><a href="talks.html">Talks</a></li>
+        </ul>
+    </nav>
+
+    <div class="research-grid">
+        
+        <!-- RESEARCH ITEM 1: GIRAFFE Lab -->
+        <div class="research-item"> 
+            <img src="images/GIRAFFE.jpg" alt="GIRAFFE Lab" class="research-image">
+            <div class="research-overlay">
+                <h3 class="research-title">GIRAFFE Lab</h3>
+                <p class="research-description">
+                    Working with <a href="https://slbooth.com/">Professor Serena Booth</a> on expertise embedding and constitutional AI. 
+                    Collaborating with the UK AI Security Institute on AI Safety via debate. Focus on human biases when judging and adjudicating, 
+                    both in judicial and everyday settings.
+                </p>
+            </div>
+        </div>
+
+        <!-- SOLID CARD -->
+        <div class="research-item solid bg-prussian">
+            <h2>Research<br>Areas</h2>
+        </div>
+
+        <!-- RESEARCH ITEM 2: White Lab -->
+        <div class="research-item">
+            <img src="images/White.jpg" alt="White Lab" class="research-image">
+            <div class="research-overlay">
+                <h3 class="research-title">White Laboratory of Affective Neuroscience</h3>
+                <p class="research-description">
+                    Working with <a href="https://dsi.brown.edu/people/tara-white">Professor Tara White</a> 
+                    on Whitelab biometrics initiatives for individualized prediction and prevention of substance use relapse. 
+                    Sponsored by the Getty Foundation, studying wearables as a method for behavioral and biometric research 
+                    for the prevention of relapses.
+                </p>
+                <p class="research-description">
+                    Awarded a highly competitive Brown Undergraduate Teaching and Research Award.
+                </p>
+            </div>
+        </div>
+
+        <!-- RESEARCH ITEM 3: Ithaka -->
+        <div class="research-item">
+            <img src="images/Ithaca.jpg" alt="Ithaka Study" class="research-image">
+            <div class="research-overlay">
+                <h3 class="research-title">Ithaka S+R Study: Defining AI Literacy</h3>
+                <p class="research-description">
+                    Brown is part of an Ithaka S+R cohort researching how information literacy frameworks can be adapted 
+                    to reflect AI-driven transformation. Conducting qualitative research to understand the changing information 
+                    practices and needs of students and instructors.
+                </p>
+            </div>
+        </div>
+
+        <!-- SOLID CARD 2 -->
+        <div class="research-item solid bg-denim">
+            <h2>AI Ethics &<br>Society</h2>
+        </div>
+
+        <!-- RESEARCH ITEM 4: Add your next research project -->
+        <div class="research-item">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800" alt="Research" class="research-image">
+            <div class="research-overlay">
+                <h3 class="research-title">Your Research Title</h3>
+                <p class="research-description">
+                    Add your research description here. Include collaborators, focus areas, and key findings.
+                </p>
+            </div>
+        </div>
+
+        <!-- RESEARCH ITEM 5: Add another research project -->
+        <div class="research-item">
+            <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800" alt="Research" class="research-image">
+            <div class="research-overlay">
+                <h3 class="research-title">Another Research Project</h3>
+                <p class="research-description">
+                    Description of this research project goes here.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+<!-- 
+TO ADD MORE RESEARCH ITEMS:
+Copy this entire block and paste it before the closing </div> of research-grid:
+
+<div class="research-item">
+    <img src="images/your-image.jpg" alt="Research" class="research-image">
+    <div class="research-overlay">
+        <h3 class="research-title">Your Research Title</h3>
+        <p class="research-description">
+            Your description here. Can include <a href="URL">links</a> to collaborators.
+        </p>
+    </div>
+</div>
+
+-->
